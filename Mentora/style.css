@@ -1,0 +1,172 @@
+button:hover {
+    cursor: pointer
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 222, 222);
+}
+
+.header{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(99, 235, 183);
+    background-color: white;
+}
+
+.icones{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons{
+    margin-right: 15px;
+}
+
+.grid-da-tela{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5%
+}
+
+.grid-da-tela > div{
+    margin-top: 0;
+    justify-items: center;
+    margin-top: 1%;
+}
+
+.botao-adicionar-materia{
+    justify-content: center;
+    line-height: 35px;
+    border: 1px dashed rgb(99, 235, 183);
+    border-radius: 50px;
+    height: 40px;
+    width: 170px;
+    background-color: white;
+    display: flex;
+}
+
+.botao-salvar {
+    border: 1px solid rgb(99, 235, 183);
+    height: 27px;
+    width: 85px;
+    background-color: white;
+}
+
+.botao-cancelar {
+    border: 1px solid rgb(255, 34, 34);
+    height: 27px;
+    width: 85px;
+    background-color: white;
+}
+
+.campo-nome-materia{
+    border: 1px solid rgb(221, 221, 221);
+    height: 25px
+}
+
+
+.logo-mentora{
+    padding-top: 5px;
+}
+
+input{
+    width: 15vw;
+}
+
+.margem-para-conteudo{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.materias-e-atalhos{
+    background-color: white;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+#escurecer-fundo{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#sobrepor-formulario, #sobrepor-formulario-atividade{
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27%;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    z-index: 20;
+    display: none;
+}
+
+#lista-materias {
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+#lista-materias li {
+    position: relative; /* Define o li como referência para o posicionamento do botão da lixeira (que será absoluto) */
+    display: block; /* Faz cada li ocupar toda a largura disponível, garantindo que fique uma matéria por linha */
+    text-align: center; /* Centraliza o texto dentro do círculo */
+    padding: 10px 15px; /* Espaçamento interno entre o texto e a borda do círculo */
+    margin: 20px auto; /* Centraliza o círculo horizontalmente e adiciona espaço vertical entre os itens */
+    border: 1px solid rgb(99, 235, 183); /* Cria a borda verde que forma o contorno do círculo */
+    border-radius: 50px; /* Arredonda as bordas, deixando o formato circular */
+    max-width: 15vw; /* Define uma largura máxima proporcional à tela (17% da largura da viewport) */
+    word-wrap: break-word; /* Permite que palavras muito longas quebrem de linha */
+    white-space: normal; /* Permite que o texto quebre automaticamente em várias linhas */
+    background-color: white; /* Define fundo branco para o círculo */
+}
+
+.botao-excluir {
+    position: absolute; /* Posiciona o botão de forma independente dentro do li */
+    right: -37px; /* Move o botão 35px para fora da borda direita do círculo */
+    top: 50%; /* Coloca o botão alinhado verticalmente ao meio do círculo */
+    transform: translateY(-50%); /* Corrige o alinhamento vertical, centralizando exatamente o botão */
+    background: white; /* Define fundo branco no botão da lixeira */
+    border: 1px solid rgb(255, 100, 100); /* Adiciona borda vermelha fina ao redor do botão */
+    border-radius: 5px; /* Deixa o botão redondo */
+    padding-top: 4px; /* Espaçamento interno entre o ícone e a borda do botão */
+    cursor: pointer; /* Altera o cursor para o formato de mãozinha ao passar sobre o botão */
+}
+
+
+.botao-excluir img {
+    width: 18px; /* Define a largura do ícone */
+    height: 10px; /* Define a altura do ícone */
+}
+
+
+.botao-excluir:hover {
+    background: rgb(255, 167, 167); /* Muda o fundo para um tom levemente rosado no hover */
+    border-color: rgb(255, 50, 50); /* Escurece a borda ao passar o mouse para dar destaque */
+}
+
+.nova-atividade {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    border-radius: 7px;
+}
