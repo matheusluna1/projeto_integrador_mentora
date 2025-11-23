@@ -612,7 +612,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         observer.observe(painelCalendario, { attributes: true });
     }
 
-
     calendar.render();
 
     carregarAtividadesNaTela();
@@ -621,4 +620,54 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const dados = JSON.parse(localStorage.getItem("ofensiva")) || { ofensiva: 0 };
     atualizarImagemFogo(dados.ofensiva);
+
+    function pesquisar(termo) {
+        const atividades = JSON.parse(localStorage.getItem("atividades")) || [];
+        const materias = JSON.parse(localStorage.getItem("materias")) || [];
+
+        const filtradasAtividades = atividades.filter(item =>
+            item.nome.toLowerCase().includes(termo)
+        );
+
+        const filtradasMaterias = materias.filter(item =>
+            item.nome.toLowerCase().includes(termo)
+        );
+
+        renderizarAtividades(filtradasAtividades);
+        renderizarMaterias(filtradasMaterias);
+    }
+
+    function renderizarAtividades(lista) {
+        const ul = document.getElementById("lista-atividades");
+        ul.innerHTML = "";
+
+        lista.forEach(atividade => {
+            const li = document.createElement("li");
+            li.textContent = atividade.nome;
+            ul.appendChild(li);
+        });
+    }
+
+    function renderizarMaterias(lista) {
+        const ul = document.getElementById("lista-materias");
+        ul.innerHTML = "";
+
+        lista.forEach(materia => {
+            const li = document.createElement("li");
+            li.textContent = materia.nome;
+            ul.appendChild(li);
+        });
+}
+
+    const CampoPesquisa = document.getElementById('campo-de-pesquisa');
+    CampoPesquisa.addEventListener('input', function () {
+        const Termo = this.value.trim().toLowerCase();
+        if (Termo === "") {
+            renderizarAtividades(JSON.parse(localStorage.getItem("atividades")) || []);
+            renderizarMaterias(JSON.parse(localStorage.getItem("materias")) || []);
+            return;
+        }
+        pesquisar(Termo);
+    }
+    );
 });
