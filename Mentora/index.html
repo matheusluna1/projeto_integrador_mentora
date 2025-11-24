@@ -80,6 +80,14 @@
               alt=""
             />
             <p id="dias-ofensiva">Ofensiva: 0 dias</p>
+
+            <!-- Colocar dentro de <div id="ofensiva">, abaixo do <p id="dias-ofensiva"> -->
+            <div id="grafico-wrapper">
+              <canvas id="graficoAtividades" aria-label="Gráfico de atividades" role="img"></canvas>
+              <p id="texto-grafico"></p>
+            </div>
+
+
           </div>
         </div>
 
@@ -162,6 +170,15 @@
     </div>
 
     <footer>® Mentora</footer>
+
+    <!-- Biblioteca do gráfico -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Canvas onde o gráfico será exibido -->
+  <canvas id="graficoAtividades" style="width:100%; max-width:250px; margin:auto;"></canvas>
+
+
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </html>
